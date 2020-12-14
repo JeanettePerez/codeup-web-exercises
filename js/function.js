@@ -80,7 +80,8 @@ console.log(isTwo(random));
 function calculateTip(a, b) {
     return a * b;
 }
-console.log();
+console.log(calculateTip(.25, 25.50));
+console.log(calculateTip(.20, 20));
 /**
  * TODO:
  * Use prompt and alert in combination with your calculateTip function to
@@ -117,3 +118,4 @@ function applyDiscount(originalPrice, discountPercent) {
 
 }
 
+console.log(applyDiscount(45.99, .12));
