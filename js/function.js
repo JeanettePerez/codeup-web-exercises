@@ -10,10 +10,10 @@
  */
 
 function sayHello(name) {
-
-    console.log("Hello " + name + "!");
+    return "Hello, " + name + "!"
 
 }
+
 
 /**
  * TODO:
@@ -22,8 +22,8 @@ function sayHello(name) {
  *
  * console.log 'helloMessage' to check your work
  */
-sayHello("Jeanette");
-let helloMessage = "Hello Jeanette!";
+
+let helloMessage = sayHello("Jeanette");
 console.log(helloMessage);
 
 /**
@@ -34,10 +34,11 @@ console.log(helloMessage);
  */
 
 let myName = "Jeanette";
-sayHello(myName);
+console.log(sayHello(myName));
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
 var random = Math.floor((Math.random() * 3) + 1);
+
 
 /**
  * TODO:
@@ -61,8 +62,7 @@ function isTwo(num) {
     return num === 2;
 
 }
-isTwo(random);
-
+console.log(random);
 console.log(isTwo(random));
 
 /**
@@ -77,8 +77,8 @@ console.log(isTwo(random));
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
 
-function calculateTip(a, b) {
-    return a * b;
+function calculateTip(tipPercent, totalBill) {
+    return tipPercent * totalBill;
 }
 console.log(calculateTip(.25, 25.50));
 console.log(calculateTip(.20, 20));
@@ -88,13 +88,35 @@ console.log(calculateTip(.20, 20));
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
  */
+// my original code
+//let billTotal = parseInt(prompt("what is your bill total?"));
+//let tipPercentage = parseFloat(prompt("What percentage for a tip would you like to apply?"));
+//let tipAmount = (calculateTip(tipPercentage, billTotal));
+ //   alert(tipAmount);
+    // the problem works, but it is not user readable.
+    // the class demo makes more sense. notes are commented below.
 
-let billTotal = parseInt(prompt("what is your bill total?"));
-let tipPercentage = parseFloat(prompt("What percentage for a tip would you like to apply?"));
+// class demo and corrections
+let billTotal = parseFloat(prompt("what is your bill total?"));
+let tipPercentage = parseFloat(prompt("What percentage for a tip would you like to apply?")) / 100;
 let tipAmount = (calculateTip(tipPercentage, billTotal));
-alert(tipAmount);
+let outputMessage = 'Your bill is '
+    + numToDollars(billTotal) + ' and you would like to tip '
+    + tipPercentage * 100 + '%.'
+    + ' Your total tip is '
+    + numToDollars(tipAmount) + '.';
+alert(outputMessage);
+
+// remember when you make a code make it readable for other humans.
+// adding parseFloat in order for the user to be able to put in decimal places in the total and percentages prompts.
+// dividing the tipPercentage by 100 will make it more user readable because people are more likely to put the whole number and not the decimal of the tip percent.
+// making the alert more specific in order for the user to understand what is going on with the output
 
 
+// the numToDollar converts the tipAmount so it shows up with a $ in front of the dollar amount
+function numToDollars(num) {
+    return '$' + num.toFixed(2);
+}
 
 /**
  * TODO:
@@ -111,11 +133,17 @@ alert(tipAmount);
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
 
-function applyDiscount(originalPrice, discountPercent) {
-    let totalDiscount = originalPrice * discountPercent;
-    return originalPrice - totalDiscount;
+
+// my orginal code
+//function applyDiscount(originalPrice, discountPercent) {
+//    let totalDiscount = originalPrice * discountPercent;
+//    return originalPrice - totalDiscount;
 
 
+//}
+
+// class demo and correction
+function applyDiscount(billDollars, discountPercentage) {
+   return billDollars - (billDollars * discountPercentage);
 }
-
 console.log(applyDiscount(45.99, .12));
