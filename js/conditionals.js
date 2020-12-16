@@ -19,19 +19,20 @@
  * Test your function by passing various string literals to it and
  * console.logging the function's return value
  */
-
-function analyzeColor(colors) {
-    if (colors === 'blue') {
-        console.log('blue is the color of the sky');
-    } else if (colors === 'red') {
-        console.log('strawberries are red');
-    } else if (colors === 'cyan') {
-        console.log('I dont know anything about cyan');
+function analyzeColor(color) {
+    if (color === 'blue') {
+        return 'blue is the color of the sky';
+    } else if (color === 'red') {
+        return 'strawberries are red';
+    } else if (color === 'cyan') {
+        return 'I dont know anything about cyan';
     } else {
-        console.log('this color can not be analyzed');
+        return color + ' can not be analyzed';
     }
 }
 console.log(analyzeColor('blue'));
+console.log(analyzeColor('yellow'));
+console.log(analyzeColor('red'));
 // Don't change the next two lines!
 // These lines create two variables for you:
 // - `colors`: a list of the colors of the rainbow
@@ -63,6 +64,7 @@ switch(randomColor) {
         break;
     default:
         alert(randomColor + ' can not be analyzed');
+        break;
 }
 console.log(randomColor);
 /**
@@ -73,8 +75,12 @@ console.log(randomColor);
  */
 
 
-let colorMessage = prompt('Pick a color');
-analyzeColor(colorMessage);
+
+let colorMessage = prompt("What's your favorite color?");
+alert(analyzeColor(colorMessage));
+
+
+
 /* ########################################################################## */
 
 /**
@@ -96,7 +102,37 @@ analyzeColor(colorMessage);
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
+function calculateTotal (luckyNumber, totalAmount) {
+    switch(luckyNumber) {
+        case 1:
+            return totalAmount - (totalAmount * .1).toFixed(2);
 
+        case 2:
+            return totalAmount - (totalAmount * .25).toFixed(2);
+
+        case 3:
+            return totalAmount - (totalAmount * .35).toFixed(2);
+
+        case 4:
+            return totalAmount - (totalAmount * .50).toFixed(2);
+
+        case 5:
+            return  totalAmount - (totalAmount * 1).toFixed(2);
+
+        default:
+            return totalAmount.toFixed(2);
+
+    }
+
+
+}
+console.log(calculateTotal(0,100));
+console.log(calculateTotal(1,100));
+console.log(calculateTotal(2,100));
+console.log(calculateTotal(3,100));
+console.log(calculateTotal(4,100));
+console.log(calculateTotal(5,100));
+console.log(calculateTotal(5,75));
 
 /**
  * TODO:
@@ -105,9 +141,23 @@ analyzeColor(colorMessage);
  * and alerts to display to the user what their lucky number was, what their
  * price before the discount was, and what their price after the discount is.
  */
-// Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
-
+//Generate a random number between 0 and 6
+var luckyNumber = Math.floor(Math.random() * 6);
+let totalBill = parseFloat(prompt("what is the total of your bill?"));
+let discountedAmount = calculateTotal(luckyNumber, totalBill);
+let outputMessage = "Your lucky number is "
+    + luckyNumber
+    + "."
+    + " Your price before the discount was "
+    + numToDollars(totalBill)
+    + "."
+    + " Your new price after the discount is "
+    + numToDollars(discountedAmount)
+    + '.';
+alert(outputMessage);
+function numToDollars(num) {
+    return '$' + num.toFixed(2);
+}
 /**
  * TODO:
  * Write some JavaScript that uses a `confirm` dialog to ask the user if they
@@ -124,3 +174,20 @@ analyzeColor(colorMessage);
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+function pickANumber(){
+    var pickANumber = confirm("would you like to play a game?");
+    if(pickANumber) {
+        var userNumberInput = prompt("Enter a number of your choice:")
+        if(isNaN(userNumberInput)) {
+            alert("That is not a number")
+        } else {
+            var evenOdd = (userNumberInput % 2 === 0) ? "Your number is even." : "Your number is odd."
+            var positiveNegative = (userNumberInput > 0) ? "your number is positive" : "your number is negative"
+                alert(evenOdd)
+                alert(positiveNegative)
+                alert("Your number plus 100 is " + (parseInt(userNumberInput) + 100))
+        }
+    } else alert("Have a nice day")
+}
+
+pickANumber();
