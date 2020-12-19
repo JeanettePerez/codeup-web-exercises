@@ -1,5 +1,5 @@
 
-
+/*
 function giveMeABreak() {
     let response = parseFloat(prompt("Pick a odd number from 1 to 50"));
     if (response % 2 === 0) {
@@ -24,3 +24,5 @@ function giveMeABreak() {
     }
 } giveMeABreak();
 
+
+ */
