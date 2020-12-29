@@ -382,7 +382,7 @@ alert(message);
  *
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
- */
+
 
 
   function isNumeric(input) {
@@ -416,6 +416,8 @@ alert(message);
       }
   }
 
- 
+
+
+ */
 
 
