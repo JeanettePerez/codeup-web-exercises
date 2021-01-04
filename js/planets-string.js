@@ -34,6 +34,11 @@ console.log(planetsString);
         planetUnorderedList += "<li></ul>"
     console.log(planetUnorderedList);
 
+    var htmlString = '<ul> <li>';
+    htmlString += planetsArray.join('</li> <li>');
+    htmlString += '</li> </ul>';
+    console.log(htmlString);
 
+    document.getElementById("demo").innerHTML = htmlString;
 
 })();
