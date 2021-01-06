@@ -23,8 +23,9 @@ planetsArray = planetsString.split("|");
      * list. You will need an opening AND closing <ul> tags around the entire
      * string, and <li> tags around each planet.
      */
- planetsString = planetsArray.join("<br>");
-console.log(planetsString);
+ var planetsWithBreaks = planetsArray.join("<br>");
+
+ console.log(planetsWithBreaks);
 // simplifies how to add things inbetween strings without typing it all out
 
 
@@ -42,3 +43,7 @@ console.log(planetsString);
     document.getElementById("demo").innerHTML = htmlString;
 
 })();
+/* class walkthrough
+var listOfPlanets = "<ul><li>" + planetsArray.join("</li><li>") + "</li></ul>";
+   document.getElementById("demo").innerHTML = listOfPlanets;
+ */

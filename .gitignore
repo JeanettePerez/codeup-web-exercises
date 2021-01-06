@@ -1,2 +1,4 @@
-git statu
+.idea/*
+*.iml
+.DS_STORE
 lectures

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Objects Mini Exercises</title>
+</head>
+<body>
+<script>
+    "use strict";
+/*
+ // MINI EXERCISE 1
+
+     //Arrays of Objects... (users)
+
+   /* var users = [
+         {
+             givenName: 'Sam',
+             age: 21
+         },
+         {
+             givenName: 'Cathy',
+             age: 34
+         },
+         {
+             givenName: 'Karen',
+             age: 43
+         }
+     ];
+     */
+    // log all the user ages
+    //  console.log(users[0].age);
+    // console.log(users[1].age);
+    // console.log(users[2].age);
+    // using a loop in order to get users age when you have a on of users
+    // for loop
+    // for(var i = 0; i <= users.length; i += 1) {
+    //     console.log(users[i].age);
+    // }
+    // refactoring using a for each loop
+    //    users.forEach(function(user) {
+    //        console.log(user.age);
+    //    });
+    //    function forEach(array, callback) {
+    //       for(var i = 0; array.length; i += 1) {
+    //           callback(array[i], i, array);
+    //           }
+    //     }
+
+
+
+    // double the age of all the users
+    /*   users.forEach(function(user) {
+           user.age = user.age * 2;
+       });
+       console.log(users);
+
+
+    - Mini Exercise 1
+    Create a few beverage objects and assign values to each object for the following properties:
+        - brandName
+        - type
+        - volumeInLiters
+        - priceInCents
+        - expirationDate
+        - datesOfPreviousSips (use an array of strings)
+    - isOpen
+    Define your objects using both literal syntax to create all properties and values at once and also try defining empty objects and assign property values in separate statements using the dot notation.
+
+
+ */
+
+
+        let beverage = {
+        brandName: "Butter Beer",
+        type: "cream soda",
+        volumeInLiters: 1,
+        priceInCents:  150,
+        expirationDate: "05 FEB 2021",
+        dataOfPreviousSips: ['05 JAN 2021', '06 JAN 2021'],
+        isOpen: true,
+    };
+    console.log(beverage);
+
+    let beverage2 = {};
+    beverage2.brandName = "Quilt";
+    beverage2.type = "Wine";
+    beverage2.volumeInLiters = 150;
+    beverage2.priceInCents =  15000;
+    beverage2.expirationDate = "05 FEB 2029";
+    beverage2.dataOfPreviousSips = ['05 JAN 2021', '06 JAN 2021'];
+    beverage2.isOpen = true;
+    console.log(beverage2);
+
+    // -- Mini Exercise 2
+    /*
+    var users = [
+        {
+            givenName: 'Sam',
+            age: 21
+        },
+        {
+            givenName: 'Cathy',
+            age: 34
+        },
+        {
+            givenName: 'Karen',
+            age: 43
+        }
+    ];
+
+    console.log("Sam Cathy Karen");
+
+       // for (var i = 0; i <= users.length; i += 1) {
+        //    console.log(users[i].givenName);
+        //}
+
+
+    //users.forEach(function(user) {
+     //  console.log(user.givenName = "John Doe");
+    //});
+
+        users.forEach(function(user) {
+
+
+          user.age = user.age + 1;
+
+        }); console.log(users);
+        /*
+          1. Log the names of all users in a single console log separated by spaces. // output = "Sam Cathy Karen"
+          2. Change the names of all users to "John Doe"
+          3. Increase the current age of all users by 1
+
+          Can you accomplish each step using iteration?
+
+        // -- Mini Exercise 3
+        //Create a dog object...
+        // The dog object should have properties for:
+        // breed (string),
+        //    weightInPounds (number),
+        //    age (number),
+        //   color (string),
+        //   canBreed (boolean),
+        //  shotRecords (array of objects with properties for date and typeOfShot)
+        //  The dog object should have methods to:
+        //     bark() - will console.log “Woof!”
+        // getOlder() - will increase age by 1
+        //  disableBreeding() - will set canBreed to false
+        //  vaccinate(nameOfVaccination) - takes in an argument for the name of the vaccination and adds a new shot with the current date to the shotRecords array
+        let shotRecord = {};
+        let shotRecord2 = {};
+
+        shotRecord.name = "rabies";
+        shotRecord.date = "11/15/2018";
+        shotRecord2.name = "bordetella";
+        shotRecord2.date = "11/15/2019"
+
+
+        let dog = {
+            breed: "border collie mix",
+            weightInPounds: 49,
+            age: 3,
+            color: "black",
+            canBreed: true,
+            shotRecords: [shotRecord,shotRecord2],
+            bark: function () {
+                console.log("Woof!");
+            },
+            getOlder: function () {
+                console.log(this.age);
+                this.age += 1;
+            },
+
+        };
+        dog.disableBreeding = function() {
+            this.canBreed = false;
+        }
+
+        console.log(dog);
+        dog.disableBreeding();
+        dog.getOlder();
+        dog.getOlder();
+        dog.getOlder();
+        dog.bark();
+
+        function vaccinate(nameOfVaccination) {
+
+        } vaccinate();
+        dog.vaccinate = function (date, name) {
+            let obj = {};
+            obj.name = name;
+            obj.date = date;
+
+            dog.shotRecords.push(obj);
+        }
+        dog.vaccinate("11/15/2020", "rabies");
+        dog.vaccinate("11/15/2020", "bordetella");
+
+
+
+     */
+</script>
+</body>
+</html>
