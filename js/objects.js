@@ -63,7 +63,10 @@ console.log(person.sayHello());
 
 
 
+
        shoppers.forEach(function (shopper) {
+
+
            let totalNeededForDiscountInDollars = 200;
            let discountPercentage = .12;
            let totalAfterDiscountInDollars;
@@ -79,7 +82,7 @@ console.log(person.sayHello());
                    + "'s new total after discount is "
                    + numToDollars(totalAfterDiscountInDollars));
 
-           } else if (shopper.amount <= 200){
+           } else if (shopper.amount <= totalNeededForDiscountInDollars){
                amountLeftToSpendForDiscount = totalNeededForDiscountInDollars - shopper.amount;
                console.log(shopper.name
                    + " is not eligible for a discount yet."
@@ -92,7 +95,53 @@ console.log(person.sayHello());
            }
        });
 
+     /*
+     // Justin's walkThrough
+// the name for what describes the forEach method is a higher order function.
+    // a function that can take in function as an argument.
+    // the anonymous function takes in up to 3 arguments the element, index, array.
 
+    // for loop benefits
+    //      - flexible iteration
+    //      - do anything a certain number
+    //      - computer friendly
+
+    //forEach loop benefits
+    //      - Only can be used on arrays of data
+    //      - All of the element in an array need to be accessed
+    //      - more readable
+    //      - User friendly
+
+        // storing the object in a variable
+    //          - let name = shopper.name
+    //          - let amountPriorToDiscount = shopper.amount
+     function calculateDiscount(amount, discountAmountThreshold, discountPercentage){
+             return (amount > discountAmountThreshold) ? amount * discountPercentage : 0;
+     }
+
+
+        let totalNeededForDiscountInDollars = 200;
+        let discountPercentage = .12;
+
+    shoppers.forEach(function (shopper) {
+        let shopperName = shopper.name;
+        let amountPriorToDiscount = shopper.amount;
+        let amountOff = calculateDiscount(amountPriorToDiscount, totalNeededForDiscountInDollars, discountPercentage)
+        let totalCost = amountPriorToDiscount - amountOff;
+
+            var message = shopperName
+                + purchased "
+                + numToDollars(amountPriorToDiscount)
+                + " and is getting "
+                + numToDollars(amountOff)
+                + " off the purchase price "
+                + "and paying "
+                + numToDollars(totalCost);
+    console.log(message);
+
+    });
+
+     */
 
 
     /** TODO:
@@ -144,7 +193,9 @@ let books = [
             }
         }
     ];
-console.log(books);
+    console.log(books[0].title);
+    console.log(books[0].author.firstName);
+     console.log(books[0].author.lastName);
 
     /**
      * TODO:
@@ -171,6 +222,24 @@ console.log(books);
      *      ...
      */
 
+
+
+    books.forEach(function(book, index) {
+        console.log("Book # "
+            + (index + 1)
+            + "\n"
+            +"Title: "
+            + book.title
+            + "\n"
+            + "Author: "
+            + book.author.firstName
+            + " "
+            + book.author.lastName
+            + "\n");
+        });
+
+
+
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
@@ -181,5 +250,28 @@ console.log(books);
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+
+
+
+
+
+    function createBooks(title, author) {
+
+    } createBooks();
+    books.createBooks = function (title, author) {
+        let obj = {};
+        obj.title = title;
+        obj.author= author;
+
+        books.createBooks().push(obj);
+    }
+  /*books.createBooks = function() {
+      return this.title + ' ' + this.author;
+  }
+  books.createBooks();
+
+   */
+
+
 
 })();
