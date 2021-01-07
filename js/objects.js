@@ -49,12 +49,51 @@ console.log(person.sayHello());
      * represents one shopper. Use a foreach loop to iterate through the array,
      * and console.log the relevant messages for each person
      */
+    function numToDollars(num) {
+        return '$' + num.toFixed(2);
+    }
+
+
 
      var shoppers = [
          {name: 'Cameron', amount: 180},
          {name: 'Ryan', amount: 250},
          {name: 'George', amount: 320}
      ];
+
+
+
+       shoppers.forEach(function (shopper) {
+           let totalNeededForDiscountInDollars = 200;
+           let discountPercentage = .12;
+           let totalAfterDiscountInDollars;
+           let amountLeftToSpendForDiscount;
+           if (shopper.amount >= totalNeededForDiscountInDollars) {
+               totalAfterDiscountInDollars = shopper.amount - (shopper.amount * discountPercentage);
+               console.log(shopper.name
+                   + "'s total is "
+                   + numToDollars(shopper.amount)
+                   + "."
+                   + "\n"
+                   + shopper.name
+                   + "'s new total after discount is "
+                   + numToDollars(totalAfterDiscountInDollars));
+
+           } else if (shopper.amount <= 200){
+               amountLeftToSpendForDiscount = totalNeededForDiscountInDollars - shopper.amount;
+               console.log(shopper.name
+                   + " is not eligible for a discount yet."
+                   + "\n"
+                   + "Add "
+                   + numToDollars(amountLeftToSpendForDiscount)
+                   + " to your cart in order to receive "
+                   + discountPercentage * 100
+                   + "% off Your total bill!");
+           }
+       });
+
+
+
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -68,6 +107,44 @@ console.log(person.sayHello());
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
+let books = [
+        {
+            title: 'Interview With The Vampire',
+            author: {
+                firstName: "Anne",
+                lastName: "Rice"
+            }
+        },
+        {
+            title: '1984',
+            author: {
+                firstName: "George",
+                lastName: "Orwell"
+            }
+        },
+        {
+            title: 'Pet Sematary',
+            author: {
+                firstName: "Stephen",
+                lastName: "King"
+            }
+        },
+        {
+            title: 'Harry Potter and the Deathly Hallows',
+            author: {
+                firstName: "J.K",
+                lastName: "Rowling"
+            }
+        },
+        {
+            title: 'To Kill A Mockingbird',
+            author: {
+                firstName: "Harper",
+                lastName: "Lee"
+            }
+        }
+    ];
+console.log(books);
 
     /**
      * TODO:

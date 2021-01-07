@@ -144,6 +144,6 @@ function numToDollars(num) {
 
 // class demo and correction
 function applyDiscount(billDollars, discountPercentage) {
-   return billDollars - (billDollars * discountPercentage);
+    return billDollars - (billDollars * discountPercentage);
 }
 console.log(applyDiscount(45.99, .12));
