@@ -197,6 +197,7 @@ let books = [
     console.log(books[0].author.firstName);
      console.log(books[0].author.lastName);
 
+
     /**
      * TODO:
      * Loop through the books array and output the following information about
@@ -222,6 +223,28 @@ let books = [
      *      ...
      */
 
+    /*
+// for loop version
+    for(var i = 0; i < books.length; i += 1) {
+        let bookNumber = i + 1;
+        console.log('book # ' + bookNumber);
+        console.log('title: ' + books[i].title);
+        console.log('author: ' + books[i].author.firstName + ' ' + books[i].author.lastName);
+        console.log('---');
+    }
+
+
+
+
+    books.forEach(function(book, index) {
+        let bookNumber = index + 1;
+        console.log('book # ' + bookNumber);
+        console.log('title: ' + books.title);
+        console.log('author: ' + books.author.firstName + ' ' + books.author.lastName);
+        console.log('---');
+    });
+
+     */
 
 
     books.forEach(function(book, index) {
@@ -235,7 +258,8 @@ let books = [
             + book.author.firstName
             + " "
             + book.author.lastName
-            + "\n");
+            + "\n"
+            + "---");
         });
 
 
@@ -250,27 +274,51 @@ let books = [
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+/*
 
-
-
-
-
-    function createBooks(title, author) {
-
-    } createBooks();
-    books.createBooks = function (title, author) {
-        let obj = {};
-        obj.title = title;
-        obj.author= author;
-
-        books.createBooks().push(obj);
+ // walk-through
+function createBook(title,author) {
+        let nameArr = author.split(' ');
+        let firstName = nameArr[0];
+        let lastName = nameArr[1];
+        return {
+            title: title,
+            author: {
+                firstName: firstName;
+                lastName: lastName;
+            }
+        }
     }
-  /*books.createBooks = function() {
-      return this.title + ' ' + this.author;
-  }
-  books.createBooks();
+ let booksUsingFunction = [
+   createBook('title1', 'john1 smith1'),
+     createBook('title2', 'john1 smith2'),
+     createBook('title3', 'john1 smith3'),
+ ];
+console.log(booksUsingFunction);
 
-   */
+// Create a function named `showBookInfo` that accepts a book object and
+//        outputs the information described above. Refactor your loop to use your
+//        `showBookInfo` function.
+function showBookInfo(book, bookNumber) {
+    console.log('book # ' + bookNumber);
+    console.log('title: ' + book.title);
+    console.log('author: ' + book.author.firstName + ' ' + book.author.lastName);
+    console.log('---');
+}
+
+    books.forEach(function(book, index) {
+        showBookInfo(book, index + 1);
+    });
+/*
+
+
+
+
+
+
+ */
+
+
 
 
 
