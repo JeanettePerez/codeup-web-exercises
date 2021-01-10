@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Register With Us</title>
+
+	</head>
+	<body>
+
+		<form method="POST" action="https://request-inspector.glitch.me/">
+			<label for="email">Email</label>
+			<input id="email" type="text" name="email" placeholder="Enter your email address">
+			<br>
+
+			<label for="password">Password</label>
+			<input id="password" type="password" name="password" placeholder="Enter your password">
+			<br>
+
+			<input type="submit">
+		</form>
+		<br>
+		<form method="post" action="https://request-inspector.glitch.me/">
+			<label for="bio">Tell us about yourself</label>
+			<br>
+			<textarea name="bio" id="bio">Type here</textarea>
+			<br>
+
+			<input type="submit">
+		</form>
+
+		<form method="POST" action="https://request-inspector.glitch.me/">
+			<p>How did you hear about us?</p>
+			<input type="radio" id="billboard" name="feedback" value="billboard">
+			<label for="billboard">billboard</label>
+			<br>
+
+			<input type="radio" id="radio advertisement" name="feedback" value="radio advertisement">
+			<label for="radio advertisement">radio advertisement</label>
+			<br>
+
+			<input type="radio" id="internet advertisement" name="feedback" value="c">
+			<label for="internet advertisement">internet advertisement </label>
+			<br>
+
+			<input type="radio" id="other" name="feedback2" value="other">
+			<label for="other">other</label>
+			<br>
+
+	<!-- if inputs are given different name attributes you can choice two of the radio
+			buttons at the same time
+			the name attribute has to be all the same if you want only one input allowed
+		-->
+			<button type="submit">send</button>
+		</form>
+		<br>
+		<br>
+
+		<form method="POST" action="https://request-inspector.glitch.me/">
+			<label for="browser">What browser are you using?</label>
+			<select name="browser" id="browser">
+				<option value="Chrome">Chrome</option>
+				<option value="Firefox">Firefox</option>
+				<option value="Internet explorer">Internet Explorer</option>
+			</select>
+			<br>
+			<input type="submit" value="submit">
+		</form>
+
+
+
+	</body>
+</html>
