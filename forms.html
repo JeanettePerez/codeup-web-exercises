@@ -6,7 +6,17 @@
 
 	</head>
 	<body>
+	<!--
+	{"method":"GET","query":{"email":"rrtr","password":"rrtw"},"body":{}}
+		- GET will put the data in the query
+		- will put data in the url
+	{"method":"POST","query":{},"body":{"email":"jjhj","password":"nmbb"}}
+		- POST will put the data in the body
+		- will not be shown in the url
+	The name attribute is needed for the information in questioned to be sent
+	The id attribute creates the identification for the label element
 
+	-->
 		<form method="POST" action="https://request-inspector.glitch.me/">
 			<label for="email">Email</label>
 			<input id="email" type="text" name="email" placeholder="Enter your email address">
