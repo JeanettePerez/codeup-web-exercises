@@ -8,14 +8,7 @@
 	<body>
 		<header style="text-align: center;">Veridian Dynamics</header>
 		  	<hr>  
-		
 		<main>
-			<section>
-				<h2>Register with us here</h2>
-			</section>
-			<section>
-
-
 	<!--
 	{"method":"GET","query":{"email":"","password":""},"body":{}}
 		- GET will put the data in the query
@@ -28,58 +21,53 @@
 
 	-->
 					<form method="POST" action="https://request-inspector.glitch.me/">
-						<label for="email">Email</label>
-						<input id="email" type="text" name="email" placeholder="Enter your email address">
-						<br>
+					     <section>
+							<label for="email">Email: </label>
+							<input id="email" type="text" name="email" placeholder="Enter your email address">
+							<br>
+						     <label for="password">Password: </label>
+							<input id="password" type="password" name="password" placeholder="Enter your password">
+						</section>
 
-						<label for="password">Password</label>
-						<input id="password" type="password" name="password" placeholder="Enter your password">
-						<br>
-						<br>
-
-						<label for="bio">Tell us about yourself</label>
-						<br>
-						<textarea name="bio" id="bio" placeholder="Type here"></textarea>
-						<br>
-						<br>
-
-						<p>How did you hear about us?</p>
-						<input type="radio" id="billboard" name="feedback" value="billboard">
-						<label for="billboard">billboard</label>
-						<br>
-
-						<input type="radio" id="radio advertisement" name="feedback" value="radio advertisement">
-						<label for="radio advertisement">radio advertisement</label>
-						<br>
-
-						<input type="radio" id="internet advertisement" name="feedback" value="internet advertisement">
-						<label for="internet advertisement">internet advertisement </label>
-						<br>
-
-						<input type="radio" id="other" name="feedback" value="other">
-						<label for="other">other</label>
-						<br>
+						<section>
+							<h4>
+								<label for="bio">Tell us about yourself</label>
+							</h4>
+					
+							<textarea name="bio" id="bio" placeholder="Type here" cols="30" rows="10"></textarea>
+						</section>
+					
+						<section>
+							<h4>How did you hear about Veridian Dynamics?</h4>
+							<input type="checkbox" id="billboard" name="feedback" value="billboard">
+							<label for="billboard">billboard</label>
+							<input type="checkbox" id="radio advertisement" name="feedback" value="radio advertisement">
+							<label for="radio advertisement">radio advertisement</label>
+							<input type="checkbox" id="internet advertisement" name="feedback" value="internet advertisement">
+							<label for="internet advertisement">internet advertisement </label>
+							<input type="checkbox" id="other" name="feedback" value="other">
+							<label for="other">other</label>
+						</section>
 
 	<!-- if inputs are given different name attributes you can choice two of the radio
 			buttons at the same time
 			the name attribute has to be all the same if you want only one input allowed
 		-->
-
-
-						<br>
-						<br>
-
-
-						<label for="browser">What browser are you using?</label>
-						<select name="browser" id="browser">
-							<option value="Chrome">Chrome</option>
-							<option value="Firefox">Firefox</option>
-							<option value="Internet explorer">Internet Explorer</option>
-						</select>
-						<br>
-						<input type="submit" value="submit">
+						<section>
+							<h4>
+								<label for="browser">What browser are you using?</label>
+							</h4>
+							<select name="browser" id="browser">
+								<option value="Chrome">Chrome</option>
+								<option value="Firefox" selected>Firefox</option>
+								<option value="Internet explorer">Internet Explorer</option>
+							</select>
+						</section>
+						<section>
+							<input type="submit" value="submit">
+						</section>
 					</form>
-			</section>
+
 		</main>
 		<footer></footer>
 
