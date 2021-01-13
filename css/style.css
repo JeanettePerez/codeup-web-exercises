@@ -1,3 +1,112 @@
+
+
+nav ul {
+    padding: 0;
+    float: right;
+    margin-right: 30px;
+    display: inline-block;
+}
+
+nav ul li {
+    position: relative;
+    display: inline-block;
+
+}
+
+nav ul li a {
+    color: #007ea7;
+
+
+}
+
+#main-heading {
+    text-align: center;
+    color: white;
+
+}
+
 .fancy-header {
-    color:purple;
+    color: #38a3a5;
+    text-align: center;
+    height: 200px;
+    margin: 20px;
+    padding: 50px;
+    font-size: 50px;
+    background-image: url("../img/tech.jpeg");
+
+
+
+}
+
+#core-values-box {
+    margin-left: 3px;
+    display: inline-block;
+    border: 0.5em black;
+    padding: 1em;
+    width: 15em;
+    height: 15em;
+    border-radius: 100%;
+    background-color: #007ea7;
+    text-align: center;
+
+}
+
+ #our-process-box {
+     margin-left: 3px;
+     display: inline-block;
+     border: 0.5em black;
+     padding: 1em;
+     width: 15em;
+     height: 15em;
+     border-radius: 100%;
+     background-color: #007ea7;
+     text-align: center;
+ }
+
+#vision-box {
+    margin-left: 3px;
+    display: inline-block;
+    border: 0.5em black;
+    padding: 1em;
+    width: 15em;
+    height: 15em;
+    border-radius: 100%;
+    background-color: #007ea7;
+    text-align: center;
+}
+
+#company-vision-box {
+    clear: both;
+    text-align: center;
+}
+
+.table-container {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.table-container tr {
+    background-color: #007ea7;
+    text-align: leftgi;
+    border: 20px;
+    height: 40px;
+    width: 50px;
+
+
+}
+
+
+
+h2 {
+    color: antiquewhite;
+    text-decoration: underline;
+    text-align: center;
+}
+
+body {
+    background-color: #102675;
+    background-image: url("../img/diagmonds.png");
+    font-family: 'Khand', sans-serif;
+    text-align: center;
+    width: 100%;
 }
