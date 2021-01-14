@@ -7,7 +7,7 @@ body, html {
 }
 
 .message {
-    margin: 1em;
+    margin: 12px 12px 5px 12px;
     border: 1px solid lightgrey;
     padding: 10px;
     border-radius: 4px;
