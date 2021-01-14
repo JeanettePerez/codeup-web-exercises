@@ -1,5 +1,5 @@
 :root {
-    --main-bg: #E6ECF0;
+    --main-bg: #E6ECF0;  /* this is how to define variables in css. you can use it by var(--main-bg);   */
     --link-color: #3B94D9;
     --main-link-color: #848487;
     --light-bg: #FFF;
@@ -26,15 +26,16 @@ a {
     color: var(--link-color);
 }
 .nav-item{
-    display: inline-block;
+    display: inline-block; /* put the li of the nav bar on the same horizontal plane */
     padding: 1.5em;
 }
 
 .top-nav {
     background: var(--light-bg);
     position: fixed;
-    width: 100%;
-    z-index: 1000;
+    width: 100%; /* this will have the nav bar extend process the screen */
+    z-index: 1; /*higher z index are neccasary when you have multiple z index. if not it just has
+     to be bigger than the default, which is 0  */
 }
 .nav {
     list-style-type: none;
@@ -52,61 +53,54 @@ a {
 }
 
 .profile-image {
-  position: absolute;
-    top: 245px;
+  position: absolute; /* takes it out of the flow of the document */
+    top: 245px; /* you can adjust in the browser on the inspect tools */
 
 }
 
 .profile {
     background: var(--light-bg);
     height: 80px;
-    line-height: 80px;
+
 }
 
 .profile-items{
     list-style-type: none;
-    padding: 0;
+    padding: 0; /* in order to remove the padding from the default list item */
 }
 
 
 .profile-form {
-    line-height: 80px;
+    line-height: 80px; /* when the line-height matches the height of the profile class it will center element*/
     padding-right: 5px;
 
 }
 
 .profile-entry{
-    margin: .5em;
+    margin: .5em; /* creates spacing to the list items */
 }
 
 .container {
-    display: flex;
-    padding: 2em;
-    margin: 0 .5em 0 .5em;
+    display: flex; /* this will have the 3 elements that are the child of this class line up next to each other */
+    margin-top: 2em;
+
 
 }
 
-.profile-details {
+.profile-details, .who-to-follow { /* to reduce duplication you can combine classes that share the same properties  */
     width: 25%;
-    margin: 0 .5em 0 .5em;
-
+    margin: 0 .5em; /* first value is y axis, 2nd is x axis */
 }
 
 .timeline {
     width: 50%;
-    margin: 0 .5em 0 .5em;
-
+    margin: 0 .5em;
 }
 
-.who-to-follow {
 
-    width: 25%;
-    margin: 0 .5em 0 .5em;
-
-}
 
 .who-to-follow h3{
-    flex-basis: 100%;
+    flex-basis: 100%; /* in order to correct the heading for the who to follow. the contents will be underneath */
 }
 
 .media {
@@ -116,14 +110,14 @@ a {
     display: flex;
     align-items: flex-start;
     flex-wrap: wrap;
-    margin-bottom: 1px;
+                /* margin-bottom: 1px; this will also work to create the line separation  */
+    border-bottom: solid 1px var(--separator-color);
 
 }
 
 .media-image {
     width: 50px;
     margin: 1.33em;
-    padding: 0;
 }
 
 .media-body {
