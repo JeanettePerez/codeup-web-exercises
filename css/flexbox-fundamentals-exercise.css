@@ -35,23 +35,23 @@ h2, h3 {
     margin: 0 auto;
     flex-direction: column;
     justify-content: space-around;
-    display: flex;
+    display: flex; /* will default to row so need to change the flex-direction */
 
 }
 
 section {
-    display: flex;
-    flex-wrap: wrap;
+    display: flex; /* section is a flex box */
+
 
 }
 
-section:nth-of-type(1) {
+section:nth-of-type(1) {  /* */
     height: 3em;
     background: lightgreen;
     justify-content: space-between;
     align-items: center;
 }
-section:nth-of-type(1) div:last-child {
+section:nth-of-type(1) div:last-child { /* a way to reference the last item in the section */
     align-self: flex-start;
 }
 
@@ -62,7 +62,7 @@ section:nth-of-type(1) div:last-child {
 }
 
 .purple-box:nth-of-type(1) {
-    flex-grow: 1;
+    flex-grow: 2;
 }
 
 .purple-box:nth-of-type(2) {
@@ -80,9 +80,7 @@ section:nth-of-type(3) {
 }
 
 section:nth-of-type(3) h3 {
-    justify-content: center;
     flex-grow: 1;
-
 }
 
 .orange-circle {
@@ -117,7 +115,8 @@ section:nth-of-type(5) {
 section:nth-of-type(6) {
     background: coral;
     height: 14em;
-    align-items: center;
+    flex-wrap: wrap;
+    align-items: center; /* getting shorter items in the center of each row */
     justify-content: space-between;
 }
 
