@@ -1,0 +1,40 @@
+nav {
+    background: #848487;
+
+}
+
+nav ul li:nth-child(5) {
+    margin: auto;
+    font-size: 3em;
+    padding: 0 .2em;
+}
+
+nav a {
+    color: #DDDDDD;
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px;
+    align-items: center;
+}
+
+nav a:hover {
+    background: black;
+    margin: 0;
+}
+
+.nav-bar {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    align-items: center;
+
+}
+
+nav ul li:nth-child(6) {
+    margin-left: auto;
+}
+
+
+
+
+
