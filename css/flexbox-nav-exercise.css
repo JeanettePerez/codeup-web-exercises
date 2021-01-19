@@ -1,25 +1,32 @@
+body {
+    margin: 0;
+}
+
 nav {
     background: #848487;
 
 }
 
-nav ul li:nth-child(5) {
-    margin: auto;
-    font-size: 3em;
-    padding: 0 .2em;
+.logo {
+    display: inline-block;
+    position: fixed;
+    margin: 0;
+   align-content: center;
 }
+
 
 nav a {
     color: #DDDDDD;
     text-decoration: none;
     display: inline-block;
+    margin: 0;
     padding: 10px;
     align-items: center;
 }
 
 nav a:hover {
     background: black;
-    margin: 0;
+
 }
 
 .nav-bar {
@@ -30,9 +37,13 @@ nav a:hover {
 
 }
 
-nav ul li:nth-child(6) {
+nav ul li:nth-child(5) {
     margin-left: auto;
+    display: inline-block;
 }
+
+
+
 
 
 
