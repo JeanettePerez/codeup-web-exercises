@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+<script>
+    function returnseven() {
+        return 7;
+    } returnseven();
+
+
+    //
+    function isFactor(x,y) {
+        if(isNaN(x) || isNaN(y) || typeof (x + y) !== "number") {
+            return false;
+        } else {
+            return x % y === 0;
+        }
+    }
+
+
+	// write a javascript function that takes in an array as an argument,
+	// and returns a new array containing only the first n last elements of the passed array.
+
+	function firstLastOfArray(arr) {
+	    var bucket = [] ; // empty array
+		bucket.push(arr[0]); // add it to the end
+		bucket.push(arr[arr.length - 1 ]);
+		return bucket;
+	}
+</script>
+</body>
+</html>
