@@ -43,7 +43,8 @@ $(document).ready(function(){
 // $('h1, p, li').css({"background":"lightblue", "border": "1px"});
 
 
-//===========The answer put together===========
+//===========All put together===========
+/*
 $(document).ready(function(){
     // alert($("#main-heading").html());
     // alert($("#second-heading").html());
@@ -52,3 +53,30 @@ $(document).ready(function(){
     $('h1, p, li').css("background", "lightblue");
     alert($("h1").html());
 });
+
+ */
+
+//============Mouse Events=========
+(function(){
+    let h1Headings = $('h1');
+    let paragraphSize = $('p');
+    let listColor = $('li');
+    let headerBckGnd = function(){
+        h1Headings.css('background-color', '');
+        $(this).css('background-color', 'pink');
+    }
+    let pTaghandler = function(){
+        paragraphSize.css('font-size', '');
+        $(this).css('font-size', '18px');
+    }
+    let liHandlerIn = function(){
+        $(this).css('color', 'red');
+    }
+    let liHandlerOut = function(){
+        $(this).css('color', '');
+    }
+
+    h1Headings.click(headerBckGnd);
+    paragraphSize.dblclick(pTaghandler);
+    listColor.hover(liHandlerIn, liHandlerOut);
+})();
