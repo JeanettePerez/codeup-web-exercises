@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Konami Code</title>
+	<style>
+		html{
+			background: url("img/jurassic.jpg") no-repeat;
+		}
+	</style>
+</head>
+<body>
+
+<div class="sup"></div>
+<script src="js/jquery-3.5.1.js"></script>
+<script>
+    "use strict";
+    (function(){
+        let konamiCode = [38,38,40,40,37,39,37,39,66,65,13];
+        let input = [];
+
+        $(document).keyup(function(e){
+            let numKeyPressesMatched = 0;
+            input.push(e.which);
+            if(input.length > konamiCode.length){
+                input.shift(); //
+            }
+            konamiCode.forEach(function (key, i){
+                console.log('start of 4 each', key, i) // key pressed and the index of the key pressed
+               if(input[i] === key){ // index of the element is equal to the keycode pressed
+                   numKeyPressesMatched++; // then key going
+                   console.log('user input matches code') // keys running the loop
+               }
+
+            })
+	        if(numKeyPressesMatched === konamiCode.length){
+	            alert('you have 30 more lives');
+				$("html").css("background-image", "url('img/jeff.jpeg')").css('background-size', 'cover');
+	        }
+
+            console.log(input);
+			console.log(numKeyPressesMatched);
+        })
+
+    })();
+
+
+
+</script>
+</body>
+</html>
