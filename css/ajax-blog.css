@@ -1,0 +1,17 @@
+html {
+    background-color: rgba(179,219,212,1);
+
+}
+
+.jumbotron{
+    height: 40em;
+    font-family: 'Oswald', sans-serif;
+    background: rgba(179, 219, 212, 1) url("../img/ice-scoops.jpeg") no-repeat;
+}
+
+.article{
+    background: #DDDDDD;
+}
+
+
+
