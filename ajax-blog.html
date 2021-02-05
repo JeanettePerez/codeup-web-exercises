@@ -35,14 +35,14 @@
 		</nav>
 
      <header>
-		<div class="jumbotron jumbotron-fluid d-none d-md-block d-xl-none">
+		<div class="jumbotron jumbotron-fluid d-md-block d-xl-none">
 			<div class="container">
 				<h1 class="display-4 text-light"></h1>
 			</div>
 		</div>
      </header>
 		<article>
-			<div id="post"></div>
+			<div id="post" class="row postDesign"></div>
 		</article>
 
 
@@ -53,6 +53,26 @@
 <script src="js/jquery-3.5.1.js"></script>
 <script>
 	(function (){
+		//requesting json info with the $.get method
+		$(document).ready(function(){
+            let blogObjReq = $.get("data/blog.json").done(blogPost)
+            function blogPost(items){
+                let html = '';
+                items.forEach(function(item){
+                    let itemsHtml = "<div class='col-12 col-md-6'>"
+	                itemsHtml += "<h1>" + item.title + "</h1>"
+	                itemsHtml += "<p>" + item.content + "</p>"
+	                itemsHtml += "<p>" + item.categories + "</p>"
+	                itemsHtml += "<p>" + item.date + "</p>"
+	                itemsHtml += "</div>"
+	                html += itemsHtml;
+                });
+                $('#post').html(html);
+            }
+
+
+		})
+
 
 	})();
 </script>
