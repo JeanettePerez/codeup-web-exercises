@@ -13,6 +13,36 @@
        .highlighted {
            background-color: #FAD3D7;
        }
+       .john{
+	       content: url("img/john.jpg");
+	       width: 12em;
+	       height: 12em;
+	       display: inline-block;
+	       margin: 2em;
+	       border: solid red 8px;
+       }
+       .leo{
+	       content: url("img/leo.jpg");
+           width: 12em;
+           height: 12em;
+           display: inline-block;
+           margin: 2em;
+           border: solid red 8px;
+       }
+       .jeff{
+	       content: url("img/goldblum.jpg");
+           width: 12em;
+           height: 12em;
+           display: inline-block;
+           margin: 2em;
+           border: solid red 8px;
+       }
+
+       .image-divs{
+	       margin: 2em;
+	       padding: 2em;
+
+       }
 
 
 	</style>
@@ -58,6 +88,37 @@
 		<dd class="invisible">Opportunities to contract with the National Park Service are posted to FedBizOpps.gov,
 			the federal government’s electronic business portal.</dd>
 	</dl>
+
+	<h3>Yellowstone National Park</h3>
+	<ul>
+		<li>Yellowstone encompasses 3,472 square miles</li>
+		<li>Yellowstone is home to more than 500 active geysers </li>
+		<li>Yellowstone is home to the largest concentration of mammals in the lower 48 states (67 species).</li>
+		<li>About 290 waterfalls can be found throughout Yellowstone’s 2.2 million acres.</li>
+	</ul>
+	<h3>Big Bend National Park</h3>
+	<ul>
+		<li>The Rio Grande River runs through Big Bend National Park. The park is named Big Bend after the river's big bend in west Texas.</li>
+		<li>There are more than 3600 species of insects found in Big Bend National Park.</li>
+		<li>Least amount of light pollution of any other national park unit in the lower 48 states</li>
+		<li>Pets are not allowed on any trails, river, or in the back country. They can go as far as your ca can go.</li>
+	</ul>
+	<h3>Everglades National Park</h3>
+	<ul>
+		<li>Home to one of the largest wetlands in the world</li>
+		<li>The everglades recieves an average of 60 inches of rain a year</li>
+		<li>3rd largest national park in the lower 48 states</li>
+		<li>Evidence of hman settlement in florida's southern tip dates back thousands of years</li>
+	</ul>
+	<button class="button-background" type="submit">push me</button>
+	<br>
+	<h1>My three moods</h1>
+	<section class="image-divs">
+		<div class="jeff"></div>
+		<div class="leo"></div>
+		<div class="john"></div>
+	</section>
+
 	<script src="js/jquery-3.5.1.js"></script>
 	<script>
 		$(document).ready(function(){
@@ -65,8 +126,22 @@
 		    $(document).click(function(e){
 		        e.preventDefault();
                 $('.invisible').toggleClass();
-                $('dt').toggleClass('highlighted')
+                $('dt').toggleClass('highlighted');
+
+				})
+            $('.button-background').click(function (e){
+                e.preventDefault();
+                $('ul li:last-child').css('background', 'yellow');
 		    });
+            $('h3').click(function (e){
+                e.preventDefault();
+                $('ul').children().css('font-weight', 'bold');
+            });
+            $('li').click(function (e){
+                e.preventDefault();
+                $('li').filter(':nth-child(1)').css('color', 'blue');
+            });
+
 		  });
 
 	</script>
