@@ -1,27 +1,32 @@
 html {
-    background-color: rgba(179,219,212,1);
+    background-color: rgba(230,221,218,1);
 
 }
 body{
-    background-color: rgba(179,219,212,1);
+    background-color: rgba(230,221,218,1);
 }
 
 .jumbotron{
-    height: 40em;
+    height: 30em;
     font-family: 'Oswald', sans-serif;
-    background: rgba(179, 219, 212, 1) url("../img/ice-scoops.jpeg") no-repeat center;
+    background: rgba(179, 219, 212, 1) url("../img/pinneapple.jpeg") bottom;
 }
-
+/*
 .selfie {
     margin-left: 2em;
     margin-right: 2em;
-    background-color: white;
+    background-color: #e9c5ba;
 }
+
+ */
+
+
 
 .aboutUs{
     background-color: white;
     margin: 0 2em;
     padding: 0 2em 2em 2em;
+
 }
 
 
@@ -33,15 +38,22 @@ body{
 }
 
 @media (min-width: 992px) {
-    .jumbotron{
-        height: 22em;
-        background: rgba(255, 233, 167, 1) url("../img/ice-cream.jpg") no-repeat;
-    }
-    html{
-        background-color: rgba(209,229,233,1);
-    }
-    body{
-        background-color: rgba(209,229,233,1);
+    /*.selfie {
+        margin-left: 8em;
+        margin-right: 8em;
     }
 
+     */
+
+    .aboutUs{
+        margin: 0 8em;
+        padding: 0 2em 2em 2em;
+    }
+
+
+
+    .postDesign{
+        margin: 8em;
+        padding: 2em;
+    }
 }
