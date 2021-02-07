@@ -12,7 +12,9 @@
 	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-
+	<audio id="pop">
+		<source src="img/rick1.mp3" type="audio/mpeg">
+	</audio>
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 			<a class="navbar-brand" href="#">The Scoop</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -84,9 +86,27 @@
                 });
                 $('#post').html(html);
             }
+			let konamiCode = [38,38,40,40,37,39,37,39,66,65,13];
+            let input = [];
 
+            $(document).keyup(function (e){
+				let numKeyPressedMatched = 0;
+				input.push(e.which);
+				if(input.length > konamiCode.length){
+				    input.shift();
+				}
+				konamiCode.forEach(function(key, i){
+				    if(input[i] === key){
+				        numKeyPressedMatched++
+				    }
+				})
+	            if(numKeyPressedMatched === konamiCode.length){
+					$(".jumbotron").css("background-image", "url('img/rick.gif')");
+					$('audio#pop')[0].play();
+	            }
+            });
 
-		})
+		});
 
 
 	})();
