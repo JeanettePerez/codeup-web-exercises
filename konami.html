@@ -38,12 +38,13 @@
         let input = [];
 
         $(document).keyup(function(e){
-            let numKeyPressesMatched = 0;
-            input.push(e.which);
-            if(input.length > konamiCode.length){
-                input.shift(); //
+            let numKeyPressesMatched = 0;            // start at 0
+            input.push(e.which);                     // key presses added to the end of array
+            console.log('start of key press', e.which);
+	        if(input.length > konamiCode.length){     // if the length of the keys pressed are greater than the number of keys in the konami code
+                input.shift(); // then remove the press from the beginning
             }
-            konamiCode.forEach(function (key, i){
+            konamiCode.forEach(function (key, i){  // iterate through the konamiCode to see if the key matches the correct index
                 console.log('start of 4 each', key, i) // key pressed and the index of the key pressed
                if(input[i] === key){ // index of the element is equal to the keycode pressed
                    numKeyPressesMatched++; // then key going
