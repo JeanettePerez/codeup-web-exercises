@@ -5,11 +5,13 @@
 	<meta name="viewport"
 	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Document</title>
+	<title>The Scoop</title>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/ajax-blog.css">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
 	<!-- https://medium.com/@ericschwartz7/adding-audio-to-your-app-with-jquery-fa96b99dfa97 -->
@@ -62,7 +64,9 @@
 				<div class="card-body">
 					<h5 class="card-title text-center">Tasty Destination Randomizer</h5>
 					<p class="card-text text-center">Can't decide which place to try first? let us make the decision for you!</p>
-					<a href="#" class="btn">Generate some sweetness</a>
+					<div id="result" class="text-center RandomizerResults"></div>
+					<a href="javascript:void();" class="btn" id="randomizerBtn">Sweet Spot</a>
+
 				</div>
 			</div>
 		</article>
@@ -119,9 +123,43 @@
 	            }
             });
 
-            // adding the tasty destination randomizer
+
+// adding the tasty destination randomizer
+            //make a restaurant name array
+            const restaurantName = ['Laika Cheesecake', 'Honchos Churros', 'Bakery Lorraine', 'Chocollazo', 'Munchies', 'Crepeccino', 'kuma', 'The Baked Bear', 'Fahrenheit 32'];
+            // using template literals to grab an item from a random index of the
+            // restaurant name by using Math.random * length of restaurant name.
+            // wrap the Math.random in Math.floor to make sure we get a whole number
+            let getRandomNumber = (max) => Math.floor(Math.random() * max);
+            let tastyGenerator = () =>
+                `${restaurantName[getRandomNumber(restaurantName.length)]}`;
+            console.log(tastyGenerator());  // we are getting random restaurant names in console
+            // create a variable name to contain the math.random for cleaner code
+            // now we need to manipulate the DOM to put the random restaurant name on the page
+            // wrap it in a function so you don't have to repeat it when needed
+
+            let setRestaurantName = () => {
+                document.getElementById('result').innerText = tastyGenerator();
+            }
+            // when you click the button it runs setRestaurantName function
+            document.getElementById('randomizerBtn').addEventListener('click', setRestaurantName);
+
+
+
+            /*function tastyGenerator(){
+				return `${restaurantName[Math.floor(Math.random() * restaurantName.length)]}`;
+			}
+			console.log(tastyGenerator());
+
+			 */
+
+
+
+
 
 		});
+
+
 
 
 	})();
