@@ -1,9 +1,17 @@
 html {
     background-color: rgba(230,221,218,1);
 
+
 }
 body{
     background-color: rgba(230,221,218,1);
+}
+
+#result{
+    font-family: 'Big Shoulders Display', cursive;
+    font-size: 2em;
+    padding: 1em;
+    margin: 1em;
 }
 
 .jumbotron{
@@ -71,5 +79,11 @@ body{
     .postDesign{
         margin: 8em;
         padding: 2em;
+    }
+    .generatorBox{
+        /*background-color: rgba(42,81,83,1);*/
+        margin-right: 8em;
+        margin-left: 8em;
+
     }
 }
