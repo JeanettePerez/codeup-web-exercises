@@ -12,6 +12,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
+	<!-- https://medium.com/@ericschwartz7/adding-audio-to-your-app-with-jquery-fa96b99dfa97 -->
 	<audio id="pop">
 		<source src="img/rick1.mp3" type="audio/mpeg">
 	</audio>
@@ -50,12 +51,19 @@
 			</div>
 
 			<div class="center-block col">
-				<h1 class="text-center">ABOUT US</h1>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-					et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-					aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-					eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-					mollit anim id est laborum.</p>
+				<h1 class="text-center game">Hello Sweeties</h1>
+				<p>Soufflé marzipan cupcake. Muffin ice cream chocolate bar caramels lemon drops. Chocolate cake jelly macaroon dessert candy muffin sweet cookie caramels. Liquorice chocolate bar macaroon cotton candy icing donut marzipan.
+
+					Dessert croissant carrot cake apple pie pudding tootsie roll sweet roll muffin. Cupcake cake halvah caramels lemon drops cake. Halvah chocolate gummi bears fruitcake jelly beans gingerbread jujubes cheesecake.</p>
+			</div>
+		</article>
+		<article>
+			<div class="card generatorBox">
+				<div class="card-body">
+					<h5 class="card-title text-center">Tasty Destination Randomizer</h5>
+					<p class="card-text text-center">Can't decide which place to try first? let us make the decision for you!</p>
+					<a href="#" class="btn">Generate some sweetness</a>
+				</div>
 			</div>
 		</article>
 		<article>
@@ -86,6 +94,9 @@
                 });
                 $('#post').html(html);
             }
+
+
+            // adding konami code. just for fun
 			let konamiCode = [38,38,40,40,37,39,37,39,66,65,13];
             let input = [];
 
@@ -102,9 +113,13 @@
 				})
 	            if(numKeyPressedMatched === konamiCode.length){
 					$(".jumbotron").css("background-image", "url('img/rick.gif')");
+					$(".navbar-brand").text("THE GAME");
+					$(".game").text("THE GAME");
 					$('audio#pop')[0].play();
 	            }
             });
+
+            // adding the tasty destination randomizer
 
 		});
 
