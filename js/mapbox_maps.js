@@ -73,7 +73,3 @@ dessertPlaces.forEach(function(place){
         .addTo(map);
 })
 
-
-
-
-

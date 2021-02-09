@@ -2,13 +2,34 @@
 body {
     margin: 0;
     padding: 0;
+    background-color: rgba(230,221,218,1);
 }
 #map {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 50em;
-    height: 50em;
-    margin: 15em;
-    border: solid dimgrey 1em;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 20em;
+    height: 20em;
+    margin: auto;
+    border: solid white 1em;
+}
+
+.carousel{
+    margin: 1em 5em;
+    padding: 1em 5em;
+    width: 100%;
+}
+
+.jumbotron{
+    background: url("../img/pinneapple.jpeg") bottom;
+    height: 20em;
+}
+
+
+@media (min-width: 768px) {
+    #map {
+        width: 50em;
+        height: 50em;
+        margin: 15em;
+    }
 }
