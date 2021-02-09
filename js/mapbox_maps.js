@@ -1,5 +1,7 @@
-mapboxgl.accessToken = mapboxToken;
-var map = new mapboxgl.Map({
+
+
+mapboxgl.accessToken = MAPBOX_TOKEN;
+let map = new mapboxgl.Map({
     container: 'map', // container id
     style: 'mapbox://styles/mapbox/streets-v11', // style URL
     center: [-98.61,29.49], // starting position [lng, lat]
@@ -66,7 +68,7 @@ let dessertPlaces = [
 
 dessertPlaces.forEach(function(place){
     let popup = new mapboxgl.Popup()
-        .setHTML(`<p>${place.restaurantName}<br>${place.popupMessage}</p>`)
+        .setHTML(`<h2>${place.restaurantName}</h2><p>${place.popupMessage}</p>`)
     new mapboxgl.Marker()
         .setLngLat(place.location)
         .setPopup(popup)
