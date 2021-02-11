@@ -4,55 +4,92 @@
     "use strict";
 
     $(document).ready(function () {
-		// function for requesting the data for the weather
-        function reqWeather(){
-            $.get("https://api.openweathermap.org/data/2.5/onecall",{
-                APPID: OWM_TOKEN,
-                lat: 29.4241,
-                lon: -98.4936,
-                units: "imperial",
-                exclude: "minutely, hourly"
 
-            }).done(renderWeather)
-        }
+		$.get("https://api.openweathermap.org/data/2.5/onecall", {
+			APPID: OWM_TOKEN,
+			lat: 29.4241,
+			lon: -98.4936,
+			units: "imperial",
+			exclude: "minutely, hourly"
 
-        // calling the weather data request
-         reqWeather();
+		}).done(function(data){
+			renderWeather(data)
+		})
+		function renderWeather(data){
+			let day = data.daily;
+			let html = "";
+			for(let i = 0; i < 5; i++){
+				let date = day[i].dt;
+				let dateCal = new Date(date * 1000);
+				let dateEnUS = dateCal.toLocaleDateString("en-US");
+				let minTemp = data.daily[i].temp.min;
+				let maxTemp = data.daily[i].temp.max;
+				let description = data.current.weather[0].description;
+				let humidity = data.daily[i].humidity;
+				let wind = data.daily[i].wind_speed;
+				let pressure = data.daily[i].pressure;
 
-        // function to render the weather data for the current data on a card
-		// need to do the display for 5 days later on
-        function renderWeather(data){
-          for(let i = 0; i < 5; i++){
-              let html = "";
-              	html += "<div class='card' style='width: 18rem;'>"
-                html += "<div class='card-header'>" + "</div>"
+				let htmlItem = "<div class='card' style='width: 18rem;'>"
+				htmlItem += "<div class='card-header text-center'>" +  dateEnUS + "</div>"
 
-              	html += "<ul class='list-group list-group-flush'>"
-              	html += "<li class='list-group-item'>" + (data.daily[i].temp.min) + " / " + (data.daily[i].temp.max) + "</li>"
-              	html += "<li class='list-group-item'>" +  "</li>"
-              	html += "<li class='list-group-item'>A third item</li>"
-              	html += "</ul>"
-              	html += "</div>"
-            $(".container").html(html);
-          }
+				htmlItem += "<ul class='list-group list-group-flush'>"
+				htmlItem += "<li class='list-group-item'>"  + minTemp + "°F"
+					+ " / "
+					+ maxTemp + "°F"
+
+					+ "</li>"
+				htmlItem += "<li class='list-group-item'>" 	+ "Description: "
+					+  description
+					+  "</li>"
+				htmlItem += "<li class='list-group-item'>"	+ "Humidity: "
+					+ humidity
+					+ "</li>"
+				htmlItem += "<li class='list-group-item'>"  + "Wind: "
+					+ wind
+					+ "</li>"
+				htmlItem += "<li class='list-group-item'>"	+ "Pressure: "
+					+ pressure
+					+ "</li>"
+				htmlItem += "</ul>"
+				htmlItem += "</div>"
+				html += htmlItem
+				$(".container").html(html);
+				console.log(data.daily[i]);
+			}
+
+
+
+
 			// console log for all the data i am going to need to extract and put into the card
 
-            console.log(data);
-            console.log(data.daily[0]);
-            console.log(data.daily[0].temp.min);
-            console.log(data.daily[0].temp.max);
-            console.log(data.current.weather[0].description);
-            console.log(data.daily[0].humidity);
-            console.log(data.daily[0].pressure);
-            console.log(data.daily[0].wind_speed);
-        }
+			console.log(data);
+			console.log(data.current.dt);
+			console.log(data.daily[0]);
+			console.log(data.daily[0].temp.min);
+			console.log(data.daily[0].temp.max);
+			console.log(data.current.weather[0].description);
+			console.log(data.daily[0].humidity);
+			console.log(data.daily[0].pressure);
+			console.log(data.daily[0].wind_speed);
+		}
+
+		mapboxgl.accessToken = MAPBOX_TOKEN;
+		let map = new mapboxgl.Map({
+			container: 'map', // container id
+			style: 'mapbox://styles/mapbox/streets-v11', // style URL
+			center: [-98.61,29.49], // starting position [lng, lat]
+			zoom: 10// starting zoom
+		});
+		map.addControl(new mapboxgl.NavigationControl());
+		var marker = new mapboxgl.Marker()
+			.setLngLat([-98.61,29.49])
+			.addTo(map);
 
     }) // document.ready closing tag
 })();
 
 
 /** TODO:
- * 		function for current date
  *    	function for image that matches the description http://openweathermap.org/img/w/[icon].png [icon] becomes api response
  *    	eliminate everything that is hardcoded
  *    	start the map section for 5 day forecast
