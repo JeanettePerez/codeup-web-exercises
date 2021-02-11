@@ -1,4 +1,19 @@
-section.container{
-    margin: 5em;
-    padding: 1em;
+.container{
+    margin: 2em;
+
+    display: flex;
+
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+#map {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 40em;
+    height: 40em;
+    margin: auto;
+    border: solid white 1em;
 }
