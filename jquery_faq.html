@@ -143,16 +143,18 @@
 	<h1 class="text-center d-none d-md-block d-lg-none">jQuery Traversing</h1>
 	<section class="row image-divs text-center">
 		<div class="col-4 d-none d-md-block d-lg-none">
-			<div class="jeff"></div>
-			<button class="swap-jeff">submit</button>
+			<img class="jeff1" src="img/jeff.jpeg">
 		</div>
 		<div class="col-4 d-none d-md-block d-lg-none">
-			<div class="leo"></div>
-			<button class="swap-leo">submit</button>
+			<img src="img/leo.jpg" class="leo2">
 		</div>
 		<div class="col-4 d-none d-md-block d-lg-none">
-			<div class="john"></div>
-			<button class="swap-john">submit</button>
+			<img src="img/john.jpg" class="john3">
+		</div>
+		<div class="d-flex justify-content-around">
+			<button class="swap-jeff-left btnSwap">submit</button>
+			<button class="swap-leo-middle btnSwap">submit</button>
+			<button class="swap-john-right btnSwap">submit</button>
 		</div>
 	</section>
 
@@ -163,24 +165,7 @@
 	<script>
 		"use strict";
 		$(document).ready(function(){
-            $('.john').css({
-                content: 'url("img/john.jpg")',
-                width: '10em',
-                height: '10em',
-                display: 'inline-block',
-                margin: '1em',
-                border: 'solid #d77f51 8px'
-            });
-            $('.leo').css({
-                content: 'url("img/leo.jpg")',
-                width: '10em',
-                height: '10em',
-                display: 'inline-block',
-                margin: '1em',
-                border: 'solid #d77f51 8px'
-            });
-            $('.jeff').css({
-                content: 'url("img/goldblum.jpg")',
+            $('img').css({
                 width: '10em',
                 height: '10em',
                 display: 'inline-block',
@@ -190,6 +175,12 @@
             $('.image-divs').css({
                 margin: '2em',
                 padding: '2em'
+
+            });
+            $('.btnSwap').css({
+	            marginLeft: '4em',
+	            marginRight: '4em'
+
             });
 
 
@@ -211,15 +202,41 @@
                 e.preventDefault();
                 $('li').filter(':nth-child(1)').css('color', 'blue');
             });
-		/*	$('.swap-jeff').on({
-				'click': function(){
-				    $('.jeff').attr('')
-				}
-			})
-			
-		 */
 
-		  });
+            // traversing bonus walkthrough
+            //swap left and middle
+            $('.swap-jeff-left').click(function (){
+	            const $imgs = $('img');
+	            const leftSrc = $imgs[0].src;
+	            const middleSrc = $imgs[1].src
+
+				$imgs[0].src = middleSrc;
+				$imgs[1].src = leftSrc;
+            });
+			// randomly either swap to the left or right
+			$('.swap-john-right').click(function (){
+				const $imgs = $('img');
+				const rightSrc = $imgs[2].src;
+				const middleSrc = $imgs[1].src
+
+				$imgs[2].src = middleSrc;
+				$imgs[1].src = rightSrc;
+			});
+			$('.swap-leo-middle').click(function() {
+				const $imgs = $('img');
+				const randomIndex = Math.random() > .5 ? 0 : 2;
+				console.log('randomIndex', randomIndex);
+
+				const middleSrc = $imgs[1].src;
+				const otherSrc = $imgs[randomIndex].src;
+
+				$imgs[1].src = otherSrc;
+				$imgs[randomIndex].src = middleSrc;
+			});
+
+
+
+		});
 
 		//========== notes ==========
 		// highlighting the last li in each list
