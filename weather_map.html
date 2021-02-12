@@ -10,17 +10,31 @@
 		<link rel="stylesheet" href="css/weather_map.css">
 	</head>
 	<body>
+	<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>
+	<link
+			rel="stylesheet"
+			href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css"
+			type="text/css"
+	/>
 	<!-- Weather nav -->
-		<nav class="navbar navbar-dark bg-primary">
+		<nav class="navbar navbar-dark bg-dark">
 			<span class="navbar-brand mb-0 h1">Weather App</span>
-			<span class="navbar-text">
-
-            </span>
+			<span class="navbar-text"></span>
+		</nav>
+		<nav class="navbar navbar-dark bg-dark justify-content-end">
+			<form class="form-inline my-2 my-lg-0">
+				<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+			</form>
 		</nav>
 
-		<div class="container"></div>
-
-		<div id="map"></div>
+		<div class="forecast"></div>
+	<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
+	<script src="https://unpkg.com/es6-promise@4.2.4/dist/es6-promise.auto.min.js"></script>
+	<script src="https://unpkg.com/@mapbox/mapbox-sdk/umd/mapbox-sdk.min.js"></script>
+	<div id="map"></div>
+			<pre id="coordinates" class="coordinates"></pre>
 
 
 
