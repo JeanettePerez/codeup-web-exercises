@@ -1,19 +1,43 @@
-.container{
+.forecast{
     margin: 2em;
-
     display: flex;
 
 }
 body {
     margin: 0;
     padding: 0;
+    background-image: url("../img/diagmonds.png");
 }
+
 #map {
     display: flex;
     justify-content: center;
     align-content: center;
-    width: 40em;
-    height: 40em;
+    width: 60em;
+    height: 60em;
     margin: auto;
     border: solid white 1em;
+}
+
+.card{
+    margin: 8px;
+
+}
+
+.coordinates {
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    position: absolute;
+    bottom: 40px;
+    left: 10px;
+    padding: 5px 10px;
+    margin: 0;
+    font-size: 11px;
+    line-height: 18px;
+    border-radius: 3px;
+    display: none;
+}
+#geocoder-container > div {
+    min-width: 50%;
+    margin-left: 25%;
 }
