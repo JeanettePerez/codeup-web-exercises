@@ -32,8 +32,16 @@
 	//
 	// })
 
+	// document.getElementById("add-btn").addEventListener('click', function (){
+	// 	var inputValue = document.querySelector("#number").value;
+	// 	var sumOutput = document.querySelector('#sum-output');
+	// 	var result = document.querySelector('#sum-output').innerText();
+	// 	sumOutput.innerText = (parseInt(inputValue) + parseInt(result));
+	// });
+
 		$("#add-btn").click(function(){
 			var inputValue = parseInt($("#number").val());
+			console.log(inputValue);
 			var result = parseInt($('#sum-output').text());
 			$('#sum-output').text(inputValue + result);
 		})
