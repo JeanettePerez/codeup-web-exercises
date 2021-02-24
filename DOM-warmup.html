@@ -11,6 +11,9 @@
             color: firebrick;
             font-size: 3em;
         }
+        .bg-colors li {
+            cursor: pointer;
+        }
 	</style>
 </head>
 <body>
@@ -28,6 +31,14 @@
 <label for="number">Number</label>
 <input id="number" type="number" name="number" min="0" max="5" value="0">
 <button id="add-btn">Add</button>
+
+<hr>
+
+<ul class="bg-colors">
+	<li>Red</li>
+	<li>Green</li>
+	<li>Blue</li>
+</ul>
 
 <!--  Include the CDN script for jQuery below -->
 <script
@@ -82,6 +93,18 @@
 			$(".title-letter").text('');
 		}
 	);
+
+	/*
+		   TODO: When an li in the ul with a class of `bg-colors` is double-clicked,
+			the background color of the page will change to the li's inner text
+		*/
+const colorList = $('.bg-colors').children();
+	$(colorList).dblclick(function (e){
+		const color = $(e.target).text();
+		$('body').css('background-color', color);
+	});
+
+
 </script>
 
 </body>
