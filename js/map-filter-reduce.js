@@ -52,8 +52,8 @@
 
 function totalExperience(){
 	let total = users.reduce((accumulator, currentValue) => {
-		console.log('accumulator ' + accumulator);
-		console.log('currentValue ' + currentValue.yearsOfExperience);
+		console.log(`accumulator: ${accumulator}`);
+		console.log(`currentValue: ${currentValue.yearsOfExperience}`);
 		return accumulator + currentValue.yearsOfExperience;
 	},0)
 		console.log('total ' + total);
@@ -61,27 +61,38 @@ function totalExperience(){
 }
 	console.log(totalExperience());
 
-function experienceRefactored(){
+function YearsOfExperienceRefactored(){
 	let total = users
 		.map(e => e.yearsOfExperience)
 		.reduce((accumulator, currentValue) => accumulator + currentValue);
 	return total / users.length;
 }
-console.log(experienceRefactored());
+console.log(YearsOfExperienceRefactored());
 
 // use .reduce to get the longest email from the list of users
 
 let longestEmail = emailAddress
 	.reduce((emailString1, emailString2) => {
-		console.log(emailString1.length);
-		console.log(emailString2.length);
+
+		console.log(`accumulator: ${emailString1} 
+		characters: ${emailString1.length}`);
+		console.log(`currentValue: ${emailString2} 
+		characters: ${emailString2.length}`);
+
 		return emailString1.length > emailString2.length ? emailString1 : emailString2;
 	});
 console.log(longestEmail);
 
 // use .reduce to get the list of user's names in a single string.
 // Example: Your instructors are: ryan, luis, zach, fernando, justin.
+	let firstName = users
+		.map(n => n.name)
+		.reduce((accumulator, currentValue) => {
+			return accumulator + ' ' + currentValue;
+		});
+	console.log(`Your instructors are: ${firstName}`);
 
+// Bonus: use .reduce to get the unique list of languages from the list of users
 
 }
 
