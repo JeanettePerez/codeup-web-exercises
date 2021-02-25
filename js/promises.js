@@ -18,3 +18,34 @@ function wait(num){
 }
 
 wait(3000).then(console.log);
+
+
+
+// const githubUsers = `https://api.github.com/users/${username}/events/public`;
+const GITHUB_API_URL = `https://api.github.com`;
+function getDateOflastCommit(username){
+	const ENDPOINT = `/users/${username}/events/public`;
+	const CONFIG = {
+		headers: {
+			'Authorization': `token ${GITHUB_TOKEN}`
+		}
+	}
+	return fetch(GITHUB_API_URL + ENDPOINT, CONFIG)
+		.then(response => response.json())
+		.then(data => {
+			let mostRecentPush = dateFormat(data[0]["created_at"]);
+			console.log(mostRecentPush);
+			return mostRecentPush;
+		}
+	);
+
+}
+console.log(getDateOflastCommit('JeanettePerez'));
+
+
+
+function dateFormat(){
+	return new Date().toDateString();
+}
+dateFormat();
+// console.log(dateFormat("2021-02-24T18:42:41Z"))
